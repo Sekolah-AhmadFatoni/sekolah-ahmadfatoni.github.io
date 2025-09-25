@@ -51,7 +51,9 @@ a {
 }
 
 .logo-image {
-    height: 40px;
+    /* Perbaikan agar tidak crop dan proporsional */
+    height: 40px; 
+    width: auto; 
     vertical-align: middle;
 }
 
@@ -159,10 +161,11 @@ a {
     background-color: #f7f7f7;
 }
 .motto-image {
-    max-width: 250px; 
-    height: auto; 
-    display: block;
-    margin: 10px auto 0 auto;
+    /* Perbaikan agar gambar mengecil tapi tetap proporsional dan di tengah */
+    max-width: 250px; /* Batasi ukuran maksimum di Mobile */
+    height: auto;     /* Penting: Mencegah cropping dengan menjaga rasio aspek */
+    display: block;   /* Penting agar margin auto bekerja */
+    margin: 10px auto 0 auto; /* Tengah secara horizontal */
 }
 
 /* --- Footer Section (Mobile) --- */
@@ -218,7 +221,9 @@ a {
 }
 
 .logo-image-footer {
+    /* Perbaikan agar tidak crop dan proporsional */
     height: 80px;
+    width: auto;
     filter: invert(100%);
     margin-bottom: 15px;
 }
