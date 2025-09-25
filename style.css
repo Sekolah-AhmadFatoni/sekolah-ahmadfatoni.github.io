@@ -42,7 +42,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.5); 
     position: fixed;
     width: 100%;
     top: 0;
@@ -51,11 +51,7 @@ a {
 }
 
 .logo-image {
-    /* Solusi Anti-Crop Final untuk logo */
-    height: 40px !important; /* Tinggi tetap */
-    width: auto !important; /* Lebar otomatis, menjaga rasio */
-    max-width: 100% !important; /* Memastikan tidak melebihi container */
-    object-fit: contain !important; /* Sangat penting: Menjamin gambar tidak terpotong */
+    height: 40px;
     vertical-align: middle;
 }
 
@@ -103,18 +99,165 @@ a {
     position: relative; width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center;
 }
 .background-img {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-    background-size: cover; 
-    background-position: center;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center;
 }
 .overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.75); z-index: 1;
 }
 .content-container {
-    position: relative; z-index: 2; padding: 20px; max-width: 90%; display: flex; align-items: center; gap: 15px; margin-top: 0;
-    color: #fff; text-align: left;
+    position: relative; z-index: 2; padding: 20px; max-width: 90%; display: flex; align-items: center; gap: 15px; margin-top: 50px; color: #fff; text-align: left;
 }
 .vertical-line {
     width: 4px; height: 120px; background-color: #ffc107; margin-right: 15px;
 }
-.welcome-text h
+.welcome-text h1 {
+    font-size: 2.5em; font-weight: 700; color: #ffc107; margin-bottom: 15px;
+}
+
+/* --- Statistics Section (Mobile) --- */
+.stats-section {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background-color: #fff; position: relative; z-index: 50; width: 100%;
+}
+.stat-box {
+    padding: 20px 10px; text-align: center; background-color: #f7f7f7;
+}
+.stat-number {
+    font-size: 2.5em; font-weight: 800; display: block;
+}
+
+/* --- Main Content Section (Mobile) --- */
+.main-content-section {
+    padding: 40px 20px; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.identity-section { text-align: center; margin-bottom: 50px; }
+.tabs { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+.tab.active::after { content: ''; position: absolute; bottom: -11px; left: 0; width: 100%; height: 3px; background-color: #ffc107; }
+.school-info { text-align: left; max-width: 500px; margin: 0 auto 40px auto; }
+.tagline-group { display: flex; flex-direction: column; align-items: center; gap: 30px; margin-bottom: 40px; }
+
+.program-and-news-container { display: block; }
+.program-item { display: flex; align-items: flex-start; margin-bottom: 20px; }
+.yellow-line { background-color: #ffc107; }
+.orange-line { background-color: #fd7e14; }
+.excellence-points ul { list-style-type: none; padding-left: 0; }
+.excellence-points li { padding-left: 1.5em; position: relative; margin-bottom: 10px; font-weight: 600; }
+.excellence-points li::before { content: '•'; color: #ffc107; font-weight: 900; position: absolute; left: 0; font-size: 1.5em; line-height: 1; }
+
+.news-title, .news-subtitle { 
+    text-align: left; 
+}
+
+/* Join Us Banner (Anti-Crop) */
+.join-us-banner {
+    text-align: center;
+    padding: 60px 20px; 
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #f7f7f7;
+}
+.motto-image {
+    max-width: 250px; 
+    height: auto; 
+    display: block;
+    margin: 10px auto 0 auto;
+}
+
+/* --- Footer Section (Mobile) --- */
+.main-footer {
+    position: relative;
+}
+
+.footer-top-bg {
+    background-image: url('bg-smk7.jpg'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 40px 0;
+    color: #fff;
+}
+
+.footer-top-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 1;
+}
+
+.footer-content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; 
+    position: relative;
+    z-index: 2;
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #444;
+}
+
+.footer-section {
+    padding: 0;
+}
+
+.footer-logo-socmed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-image-footer {
+    height: 80px;
+    filter: invert(100%);
+    margin-bottom: 15px;
+}
+
+.social-icons a {
+    color: #ffc107;
+    font-size: 1.5em;
+    margin: 0 10px;
+}
+
+.footer-section h3 {
+    color: #ffc107;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.map-container {
+    height: 300px; 
+    margin-top: 40px;
+    position: relative;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.footer-copyright {
+    background-color: #ffc107;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9em;
+}
