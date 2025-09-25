@@ -1,259 +1,272 @@
-<!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>SMK Negeri 7 Batam - Website Sekolah</title> <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="responsive.css"> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> </head> <body>
-<div class="sidebar" id="sidebarMenu">
-    <div class="sidebar-header">
-        <span class="sidebar-title">SMK NEGERI 7 BATAM</span>
-        <button class="close-btn" onclick="toggleMenu()">×</button>
-    </div>
-    <ul class="sidebar-nav">
-        <li><a href="#welcome" onclick="toggleMenu()">Home</a></li>
-        <li class="has-submenu"><a href="#identitas" onclick="toggleMenu()">Profil <span class="arrow">▼</span></a></li>
-        <li class="has-submenu"><a href="#program" onclick="toggleMenu()">Program <span class="arrow">▼</span></a></li>
-        <li class="has-submenu"><a href="#program" onclick="toggleMenu()">Konsentrasi Keahlian <span class="arrow">▼</span></a></li>
-        <li><a href="#">GTK dan Siswa</a></li> 
-        <li><a href="#">SarPras</a></li>
-        <li class="has-submenu"><a href="#">Kegiatan <span class="arrow">▼</span></a></li>
-        <li class="has-submenu"><a href="#">Galeri <span class="arrow">▼</span></a></li>
-        <li class="has-submenu"><a href="#berita" onclick="toggleMenu()">Berita <span class="arrow">▼</span></a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#footer-kontak" onclick="toggleMenu()">Kontak</a></li>
-        <li><a href="#" class="login-link">Login</a></li>
-    </ul>
-</div>
-<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleMenu()"></div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMK Negeri 7 Batam - Website Sekolah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
 
-<header class="navbar">
-    <div class="nav-brand">
-        <img src="https://iili.io/KlV0Ala.md.png" alt="Logo SMK Negeri 7 Batam" class="logo-image">
-    </div>
-    
-    <nav class="desktop-menu">
-        <ul>
-            <li><a href="#welcome">Home</a></li>
-            <li><a href="#identitas">Profil</a></li>
-            <li><a href="#program">Program</a></li>
-            <li><a href="#program">Konsentrasi Keahlian</a></li>
-            <li><a href="#">GTK dan Siswa</a></li>
+    <div class="sidebar" id="sidebarMenu">
+        <div class="sidebar-header">
+            <span class="sidebar-title">SMK NEGERI 7 BATAM</span>
+            <button class="close-btn" onclick="toggleMenu()">×</button>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="#welcome" onclick="toggleMenu()">Home</a></li>
+            <li class="has-submenu"><a href="#identitas" onclick="toggleMenu()">Profil <span class="arrow">▼</span></a></li>
+            <li class="has-submenu"><a href="#program" onclick="toggleMenu()">Program <span class="arrow">▼</span></a></li>
+            <li class="has-submenu"><a href="#program" onclick="toggleMenu()">Konsentrasi Keahlian <span class="arrow">▼</span></a></li>
+            <li><a href="#">GTK dan Siswa</a></li> 
             <li><a href="#">SarPras</a></li>
-            <li><a href="#">Kegiatan</a></li>
-            <li><a href="#">Galeri</a></li>
-            <li><a href="#berita">Berita</a></li>
+            <li class="has-submenu"><a href="#">Kegiatan <span class="arrow">▼</span></a></li>
+            <li class="has-submenu"><a href="#">Galeri <span class="arrow">▼</span></a></li>
+            <li class="has-submenu"><a href="#berita" onclick="toggleMenu()">Berita <span class="arrow">▼</span></a></li>
             <li><a href="#">Blog</a></li>
-            <li><a href="#footer-kontak">Kontak</a></li>
-            <li class="login-btn"><a href="#">Login</a></li>
+            <li><a href="#footer-kontak" onclick="toggleMenu()">Kontak</a></li>
+            <li><a href="#" class="login-link">Login</a></li>
         </ul>
-    </nav>
+    </div>
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleMenu()"></div>
     
-    <button class="menu-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </button>
-</header>
-
-<main class="welcome-section" id="welcome">
-    <div class="background-img" style="background-image: url('bg-smk7.jpg');"></div>
-    <div class="overlay"></div>
-    <div class="content-container">
-        <div class="decorative-line-box">
-            <div class="decorative-line vertical-line"></div>
+    <header class="navbar">
+        <div class="nav-brand">
+            <img src="https://iili.io/KlV0Ala.md.png" alt="Logo SMK Negeri 7 Batam" class="logo-image">
         </div>
-        <div class="welcome-text">
-            <p class="greeting">SELAMAT DATANG di</p>
-            <h1>SMK NEGERI 7 BATAM</h1>
-            <p class="motto">SMK Negeri 7 Batam Mewujudkan Peserta Didik yang Beriman, Bertaqwa kepada Tuhan Yang Maha Esa, Berakhlak Mulia, Terampil, Unggul, dan Berdaya Saing Global di Era Teknologi Digital.</p>
+        
+        <nav class="desktop-menu">
+            <ul>
+                <li><a href="#welcome">Home</a></li>
+                <li><a href="#identitas">Profil</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#program">Konsentrasi Keahlian</a></li>
+                <li><a href="#">GTK dan Siswa</a></li>
+                <li><a href="#">SarPras</a></li>
+                <li><a href="#">Kegiatan</a></li>
+                <li><a href="#">Galeri</a></li>
+                <li><a href="#berita">Berita</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#footer-kontak">Kontak</a></li>
+                <li class="login-btn"><a href="#">Login</a></li>
+            </ul>
+        </nav>
+        
+        <button class="menu-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+    </header>
+
+    <main class="welcome-section" id="welcome">
+        <div class="background-img" style="background-image: url('bg-smk7.jpg');"></div>
+        <div class="overlay"></div>
+        <div class="content-container">
+            <div class="decorative-line-box">
+                <div class="decorative-line vertical-line"></div>
+            </div>
+            <div class="welcome-text">
+                <p class="greeting">SELAMAT DATANG di</p>
+                <h1>SMK NEGERI 7 BATAM</h1>
+                <p class="motto">SMK Negeri 7 Batam Mewujudkan Peserta Didik yang Beriman, Bertaqwa kepada Tuhan Yang Maha Esa, Berakhlak Mulia, Terampil, Unggul, dan Berdaya Saing Global di Era Teknologi Digital.</p>
+            </div>
         </div>
-    </div>
-</main>
-
-<section class="stats-section">
-    <div class="stat-box yellow-bg">
-        <span class="stat-number">0</span>
-        <p class="stat-label">GURU DAN TENAGA KEPENDIDIKAN</p>
-    </div>
-    <div class="stat-box yellow-bg">
-        <span class="stat-number">0</span>
-        <p class="stat-label">ROMBEL</p>
-    </div>
-    <div class="stat-box yellow-bg">
-        <span class="stat-number">0</span>
-        <p class="stat-label">KONSENTRASI KEAHLIAN</p>
-    </div>
-    <div class="stat-box yellow-bg">
-        <span class="stat-number">0</span>
-        <p class="stat-label">PESERTA DIDIK</p>
-    </div>
-</section>
-
-<section class="main-content-section">
+    </main>
     
-    <div class="identity-section" id="identitas">
-        <h2 class="section-title">KATA SAMBUTAN</h2>
-        <p class="headmaster-title">KEPALA SMK NEGERI 7 BATAM</p>
-        <p class="headmaster-name">Kepala SMK Negeri 7 Batam</p>
-        
-        <h2 class="section-title">IDENTITAS SEKOLAH</h2>
-        <div class="tabs">
-            <a href="#" class="tab active">Identitas Sekolah</a>
-            <a href="#" class="tab">Kontak</a>
-            <a href="#" class="tab">Ketersediaan</a>
+    <section class="stats-section">
+        <div class="stat-box yellow-bg">
+            <span class="stat-number">0</span>
+            <p class="stat-label">GURU DAN TENAGA KEPENDIDIKAN</p>
         </div>
-        
-        <div class="school-info">
-            <p><strong>Akreditasi :</strong> A</p>
-            <p><strong>Kurikulum :</strong> Kurikulum Merdeka</p>
-            <p><strong>NPSN :</strong> 69774885</p>
-            <p><strong>Status :</strong> Negeri</p>
-            <p><strong>Bentuk Pendidikan :</strong> SMK</p>
-            <p><strong>Status Kepemilikan :</strong> Pemerintah Daerah</p>
-            <p><strong>SK Pendirian Sekolah :</strong> KPTS.367/HK/IX/2014</p>
-            <p><strong>Tanggal SK Pendirian :</strong> 2014-09-05</p>
-            <p><strong>SK Izin Operasional :</strong> KPTS.367/HK/IX/2014</p>
-            <p><strong>Tanggal SK Izin Operasional :</strong> 2015-10-23</p>
+        <div class="stat-box yellow-bg">
+            <span class="stat-number">0</span>
+            <p class="stat-label">ROMBEL</p>
         </div>
-        
-        <div class="tagline-group">
-            <div class="tagline inovatif">
-                <p><strong>INOVATIF</strong></p>
-                <p>Pioneering Solutions and Innovations</p>
-            </div>
-            <div class="tagline berbudaya">
-                <p><strong>BERBUDAYA</strong></p>
-                <p>Diverse Ethnicities and Religions</p>
-            </div>
+        <div class="stat-box yellow-bg">
+            <span class="stat-number">0</span>
+            <p class="stat-label">KONSENTRASI KEAHLIAN</p>
         </div>
-    </div>
+        <div class="stat-box yellow-bg">
+            <span class="stat-number">0</span>
+            <p class="stat-label">PESERTA DIDIK</p>
+        </div>
+    </section>
 
-    <div class="program-and-news-container">
-        <div class="program-box-column" id="program">
-            <h2 class="section-title">KONSENTRASI KEAHLIAN</h2>
-            <div class="program-box">
-                <div class="program-item">
-                    <div class="decorative-line-box">
-                        <div class="decorative-line vertical-line yellow-line"></div>
-                    </div>
-                    <div class="program-details">
-                        <p class="program-title">Konsentrasi Unggulan</p>
-                        <p class="program-subtitle">SMK Negeri 7 Batam</p>
-                    </div>
-                </div>
-            </div>
-
-            <h2 class="section-title mt-4">Rencana Aksi Program SMK Pusat Keunggulan</h2>
-            <div class="program-box">
-                <div class="program-item">
-                    <div class="decorative-line-box">
-                        <div class="decorative-line vertical-line orange-line"></div>
-                    </div>
-                    <div class="program-details">
-                        <p class="program-title">SMK Negeri 7 Batam, SMK Pusat Keunggulan</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="excellence-and-news-column" id="berita">
-            <h2 class="section-title">SMK Negeri 7 Batam, SMK Pusat Keunggulan</h2>
-            <div class="excellence-points">
-                <ul>
-                    <li>Mengembangkan kerjasama dengan DUDIKA</li>
-                    <li>Memiliki kelas industri untuk semua konsentrasi keahlian</li>
-                    <li>Memiliki Lembaga Sertifikasi Profesi</li>
-                </ul>
+    <section class="main-content-section">
+        
+        <div class="identity-section" id="identitas">
+            <h2 class="section-title">KATA SAMBUTAN</h2>
+            <p class="headmaster-title">KEPALA SMK NEGERI 7 BATAM</p>
+            <p class="headmaster-name">Kepala SMK Negeri 7 Batam</p>
+            
+            <h2 class="section-title">IDENTITAS SEKOLAH</h2>
+            <div class="tabs">
+                <a href="#" class="tab active">Identitas Sekolah</a>
+                <a href="#" class="tab">Kontak</a>
+                <a href="#" class="tab">Ketersediaan</a>
             </div>
             
-            <h2 class="section-title news-title">SMK NEGERI 7 BATAM</h2>
-            <p class="news-subtitle">Berita Terbaru</p>
-            <div class="news-preview">
-                <p style="padding-top: 20px;">[Daftar Berita Terbaru di sini...]</p>
+            <div class="school-info">
+                <p><strong>Akreditasi :</strong> A</p>
+                <p><strong>Kurikulum :</strong> Kurikulum Merdeka</p>
+                <p><strong>NPSN :</strong> 69774885</p>
+                <p><strong>Status :</strong> Negeri</p>
+                <p><strong>Bentuk Pendidikan :</strong> SMK</p>
+                <p><strong>Status Kepemilikan :</strong> Pemerintah Daerah</p>
+                <p><strong>SK Pendirian Sekolah :</strong> KPTS.367/HK/IX/2014</p>
+                <p><strong>Tanggal SK Pendirian :</strong> 2014-09-05</p>
+                <p><strong>SK Izin Operasional :</strong> KPTS.367/HK/IX/2014</p>
+                <p><strong>Tanggal SK Izin Operasional :</strong> 2015-10-23</p>
+            </div>
+            
+            <div class="tagline-group">
+                <div class="tagline inovatif">
+                    <p><strong>INOVATIF</strong></p>
+                    <p>Pioneering Solutions and Innovations</p>
+                </div>
+                <div class="tagline berbudaya">
+                    <p><strong>BERBUDAYA</strong></p>
+                    <p>Diverse Ethnicities and Religions</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="join-us-banner">
-        <h2 class="join-text">Ayo Bergabung di SMK Negeri 7 Batam</h2>
-        <div class="motto-box">
-             <img src="https://iili.io/KlV0CNV.png" alt="SMK BISA SMK HEBAT" class="motto-image">
-        </div>
-    </div>
+        <div class="program-and-news-container">
+            <div class="program-box-column" id="program">
+                <h2 class="section-title">KONSENTRASI KEAHLIAN</h2>
+                <div class="program-box">
+                    <div class="program-item">
+                        <div class="decorative-line-box">
+                            <div class="decorative-line vertical-line yellow-line"></div>
+                        </div>
+                        <div class="program-details">
+                            <p class="program-title">Konsentrasi Unggulan</p>
+                            <p class="program-subtitle">SMK Negeri 7 Batam</p>
+                        </div>
+                    </div>
+                </div>
 
-</section>
+                <h2 class="section-title mt-4">Rencana Aksi Program SMK Pusat Keunggulan</h2>
+                <div class="program-box">
+                    <div class="program-item">
+                        <div class="decorative-line-box">
+                            <div class="decorative-line vertical-line orange-line"></div>
+                        </div>
+                        <div class="program-details">
+                            <p class="program-title">SMK Negeri 7 Batam, SMK Pusat Keunggulan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<footer class="main-footer" id="footer-kontak">
-    <div class="footer-top-bg">
-        <div class="footer-content-wrapper">
-            <div class="footer-top">
+            <div class="excellence-and-news-column" id="berita">
+                <h2 class="section-title">SMK Negeri 7 Batam, SMK Pusat Keunggulan</h2>
+                <div class="excellence-points">
+                    <ul>
+                        <li>Mengembangkan kerjasama dengan DUDIKA</li>
+                        <li>Memiliki kelas industri untuk semua konsentrasi keahlian</li>
+                        <li>Memiliki Lembaga Sertifikasi Profesi</li>
+                    </ul>
+                </div>
                 
-                <div class="footer-section footer-logo-socmed">
-                    <div class="logo-box">
-                        <img src="https://iili.io/KlV0Ala.md.png" alt="Logo SMK Negeri 7 Batam" class="logo-image-footer">
-                    </div>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                    </div>
+                <h2 class="section-title news-title">SMK NEGERI 7 BATAM</h2>
+                <p class="news-subtitle">Berita Terbaru</p>
+                <div class="news-preview">
+                    <p style="padding-top: 20px;">[Daftar Berita Terbaru di sini...]</p>
                 </div>
-
-                <div class="footer-section footer-links-group">
-                    <div class="nav-links">
-                        <h3>Navigasi</h3>
-                        <ul>
-                            <li><a href="#welcome">Home</a></li>
-                            <li><a href="#footer-kontak">Kontak</a></li>
-                        </ul>
-                    </div>
-                    <div class="important-links">
-                        <h3>Tautan Penting</h3>
-                        <ul>
-                            <li><a href="#">Disdik Kota Batam</a></li>
-                            <li><a href="#">Dapodik Provinsi Kepri</a></li>
-                            <li><a href="#">Data Sekolah SMK Negeri 7 Batam</a></li>
-                            <li><a href="#">Peta Lokasi SMK Negeri 7 Batam</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="footer-section about-us">
-                    <h3>Tentang Kami</h3>
-                    <address>
-                        SMK NEGERI 7 BATAM<br>
-                        Penyelusuran Sekolah Peringkat, Kelurahan. Kel. Belian Kota. Kota Batam, Prov. Kepulauan Riau Kode Pos: 29463<br>
-                        Email: smknegeri7batam@gmail.com
-                    </address>
-                </div>
-            </div>
-
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.150493630263!2d103.9538357748434!3d1.0601955990264192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d988d4c3829033%3A0xc3f173b9846b9f1d!2sSMK%20Negeri%207%20Batam!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
             </div>
         </div>
-    </div>
 
-    <div class="footer-copyright">
-        <p>©2024 Hak Cipta. SMK NEGERI 7 BATAM</p>
-    </div>
+        <div class="join-us-banner">
+            <h2 class="join-text">Ayo Bergabung di SMK Negeri 7 Batam</h2>
+            <div class="motto-box">
+                 <img src="https://iili.io/KlV0CNV.png" alt="SMK BISA SMK HEBAT" class="motto-image">
+            </div>
+        </div>
 
-</footer>
+    </section>
 
-<script>
-    function toggleMenu() {
-        const sidebar = document.getElementById('sidebarMenu');
-        const backdrop = document.getElementById('sidebarBackdrop');
-        
-        if (window.innerWidth < 768) {
-            sidebar.classList.toggle('active');
-            backdrop.classList.toggle('active');
-            document.body.classList.toggle('no-scroll');
+    <footer class="main-footer" id="footer-kontak">
+        <div class="footer-top-bg">
+            <div class="footer-content-wrapper">
+                <div class="footer-top">
+                    
+                    <div class="footer-section footer-logo-socmed">
+                        <div class="logo-box">
+                            <img src="https://iili.io/KlV0Ala.md.png" alt="Logo SMK Negeri 7 Batam" class="logo-image-footer">
+                        </div>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer-section footer-links-group">
+                        <div class="nav-links">
+                            <h3>Navigasi</h3>
+                            <ul>
+                                <li><a href="#welcome">Home</a></li>
+                                <li><a href="#footer-kontak">Kontak</a></li>
+                            </ul>
+                        </div>
+                        <div class="important-links">
+                            <h3>Tautan Penting</h3>
+                            <ul>
+                                <li><a href="#">Disdik Kota Batam</a></li>
+                                <li><a href="#">Dapodik Provinsi Kepri</a></li>
+                                <li><a href="#">Data Sekolah SMK Negeri 7 Batam</a></li>
+                                <li><a href="#">Peta Lokasi SMK Negeri 7 Batam</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer-section about-us">
+                        <h3>Tentang Kami</h3>
+                        <address>
+                            SMK NEGERI 7 BATAM<br>
+                            Penyelusuran Sekolah Peringkat, Kelurahan. Kel. Belian Kota. Kota Batam, Prov. Kepulauan Riau Kode Pos: 29463<br>
+                            Email: smknegeri7batam@gmail.com
+                        </address>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.150493630263!2d103.9538357748434!3d1.0601955990264192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d988d4c3829033%3A0xc3f173b9846b9f1d!2sSMK%20Negeri%207%20Batam!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <p>©2024 Hak Cipta. SMK NEGERI 7 BATAM</p>
+        </div>
+
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebarMenu');
+            const backdrop = document.getElementById('sidebarBackdrop');
+            
+            if (window.innerWidth < 768) {
+                sidebar.classList.toggle('active');
+                backdrop.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            }
         }
-    }
 
-    document.querySelector('.menu-toggle').onclick = toggleMenu;
-</script>
-</body> </html>
+        document.querySelector('.menu-toggle').onclick = toggleMenu;
+    </script>
+</body>
+</html>
