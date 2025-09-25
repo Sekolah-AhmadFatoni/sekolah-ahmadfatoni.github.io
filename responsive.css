@@ -16,7 +16,9 @@
     }
 
     .logo-image {
+        /* Ukuran desktop proporsional */
         height: 60px; 
+        width: auto;
     }
 
     .desktop-menu {
@@ -55,12 +57,8 @@
         margin-left: 10px;
     }
     
-    .menu-toggle .bar {
-        background-color: #333; 
-    }
-    
-    .sidebar, .sidebar-backdrop {
-        display: none !important;
+    .menu-toggle {
+        display: none; 
     }
 
     /* --- Welcome Section Adjustments (PC) --- */
@@ -106,6 +104,15 @@
         gap: 40px;
         align-items: flex-start;
     }
+    
+    .news-title, .news-subtitle {
+        text-align: left;
+    }
+    
+    .motto-image {
+        /* Ukuran desktop proporsional */
+        max-width: 300px; 
+    }
 
     /* --- Footer Adjustments (PC) --- */
     .footer-content-wrapper {
@@ -114,7 +121,7 @@
 
     .footer-top {
         display: grid;
-        grid-template-columns: 1.2fr 1fr 1.2fr; /* Disesuaikan: Logo, Link, About */
+        grid-template-columns: 1.2fr 1fr 1.2fr; 
         gap: 30px;
         text-align: left;
         align-items: flex-start;
@@ -126,10 +133,16 @@
         text-align: left;
     }
 
+    .logo-image-footer {
+        /* Ukuran desktop proporsional */
+        height: 100px; 
+        width: auto;
+    }
+
     .footer-links-group {
-        /* Menggabungkan nav-links dan important-links dalam satu kolom */
         display: flex;
-        flex-direction: column;
+        flex-direction: row; 
+        justify-content: space-between;
         gap: 30px; 
     }
     
