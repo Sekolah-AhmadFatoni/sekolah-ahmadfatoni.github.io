@@ -1,0 +1,144 @@
+/* responsive.css (Penyesuaian untuk PC/Desktop) */
+
+@media (min-width: 768px) {
+    
+    /* --- Navbar Adjustments (PC) --- */
+    .website-link {
+        display: block; 
+        margin-right: auto;
+        margin-left: 20px;
+    }
+
+    .menu-toggle {
+        display: block; /* Tetap ditampilkan di PC */
+        margin-left: 20px; 
+    }
+    
+    .desktop-menu {
+        display: block; 
+    }
+    
+    .desktop-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .desktop-menu li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1em;
+        padding: 5px 0;
+        transition: color 0.2s;
+    }
+    
+    .desktop-menu li a:hover {
+        color: #ffc107;
+    }
+    
+    /* Sembunyikan Sidebar di PC */
+    .sidebar, .sidebar-backdrop {
+        display: none !important;
+    }
+
+    .no-scroll {
+        overflow: auto;
+    }
+
+    /* --- Welcome Section Adjustments (PC) --- */
+    .content-container {
+        max-width: 1200px;
+        margin-top: 0;
+        padding-left: 50px;
+    }
+
+    .welcome-text h1 {
+        font-size: 4em; 
+    }
+
+    /* --- Statistics Section Adjustments (PC) --- */
+    .stats-section {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+
+    /* --- Main Content Adjustments (PC) --- */
+    .section-title {
+        text-align: left; 
+    }
+    
+    .identity-section {
+        text-align: left;
+    }
+    
+    .headmaster-name, .headmaster-title {
+        text-align: center;
+    }
+    
+    .tabs {
+        justify-content: flex-start;
+    }
+    
+    .school-info {
+        margin: 0 0 40px 0;
+        max-width: none;
+    }
+
+    .tagline-group {
+        flex-direction: row; 
+        justify-content: center;
+        gap: 60px;
+        max-width: 800px;
+        margin: 0 auto 40px auto;
+        display: flex; 
+    }
+    
+    .tagline {
+        text-align: left;
+    }
+    
+    /* Program & Excellence: Two Column Layout on PC */
+    .program-and-news-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr; 
+        gap: 40px;
+        align-items: flex-start;
+    }
+    
+    .excellence-and-news-column {
+        grid-column: 2; 
+    }
+    
+    .program-box-column {
+        grid-column: 1; 
+    }
+
+    .news-title, .news-subtitle {
+        text-align: left;
+    }
+
+    /* --- Footer Adjustments (PC) --- */
+    .footer-top {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 1000px;
+        margin: 0 auto 30px auto;
+        border-bottom: 1px solid #444;
+        padding-bottom: 20px;
+    }
+    
+    .footer-navigation {
+        flex-direction: row; 
+        justify-content: space-around;
+        text-align: left;
+        padding: 0 40px;
+    }
+    
+    .map-container {
+        height: 400px;
+    }
+}
