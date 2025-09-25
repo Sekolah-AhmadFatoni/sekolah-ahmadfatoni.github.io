@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
     <div class="sidebar" id="sidebarMenu">
         <div class="sidebar-header">
             <span class="sidebar-title">SMK NEGERI 7 BATAM</span>
-            <button class="close-btn" onclick="toggleMenu()">&times;</button>
+            <button class="close-btn" onclick="toggleMenu()">×</button>
         </div>
         <ul class="sidebar-nav">
             <li><a href="#welcome" onclick="toggleMenu()">Home</a></li>
@@ -39,15 +40,22 @@
         
         <nav class="desktop-menu">
             <ul>
-                <li><a href="#welcome">Beranda</a></li>
+                <li><a href="#welcome">Home</a></li>
                 <li><a href="#identitas">Profil</a></li>
-                <li><a href="#program">Jurusan</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#program">Konsentrasi Keahlian</a></li>
+                <li><a href="#">GTK dan Siswa</a></li>
+                <li><a href="#">SarPras</a></li>
+                <li><a href="#">Kegiatan</a></li>
+                <li><a href="#">Galeri</a></li>
                 <li><a href="#berita">Berita</a></li>
+                <li><a href="#">Blog</a></li>
                 <li><a href="#footer-kontak">Kontak</a></li>
+                <li class="login-btn"><a href="#">Login</a></li>
             </ul>
         </nav>
         
-        <button class="menu-toggle" aria-label="Toggle navigation">
+        <button class="menu-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
@@ -168,57 +176,80 @@
                 <h2 class="section-title news-title">SMK NEGERI 7 BATAM</h2>
                 <p class="news-subtitle">Berita Terbaru</p>
                 <div class="news-preview">
-                    </div>
+                    <p style="padding-top: 20px;">[Daftar Berita Terbaru di sini...]</p>
+                </div>
             </div>
         </div>
 
         <div class="join-us-banner">
             <h2 class="join-text">Ayo Bergabung di SMK Negeri 7 Batam</h2>
             <div class="motto-box">
-                <img style="max-width:200px;margin-top:20px;" >
-                <img src="https://iili.io/KlV0CNV.png" alt="SMK BISA SMK HEBAT" class="motto-image">
-
+                 <img src="https://iili.io/KlV0CNV.png" alt="SMK BISA SMK HEBAT" class="motto-image">
             </div>
         </div>
 
     </section>
 
     <footer class="main-footer" id="footer-kontak">
-        <div class="nav-brand">
-            <img src="https://iili.io/KlV0Ala.md.png" alt="Logo SMK Negeri 7 Batam" class="logo-image">
+        <div class="footer-top-bg">
+            <div class="footer-content-wrapper">
+                <div class="footer-top">
+                    
+                    <div class="footer-section footer-logo-socmed">
+                        <div class="logo-box">
+                            <img src="https://iili.io/KlV0Ala.md.png" alt="Logo SMK Negeri 7 Batam" class="logo-image-footer">
+                        </div>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
 
-      
+                    <div class="footer-section footer-links-group">
+                        <div class="nav-links">
+                            <h3>Navigasi</h3>
+                            <ul>
+                                <li><a href="#welcome">Home</a></li>
+                                <li><a href="#footer-kontak">Kontak</a></li>
+                            </ul>
+                        </div>
+                        <div class="important-links">
+                            <h3>Tautan Penting</h3>
+                            <ul>
+                                <li><a href="#">Disdik Kota Batam</a></li>
+                                <li><a href="#">Dapodik Provinsi Kepri</a></li>
+                                <li><a href="#">Data Sekolah SMK Negeri 7 Batam</a></li>
+                                <li><a href="#">Peta Lokasi SMK Negeri 7 Batam</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="footer-section about-us">
+                        <h3>Tentang Kami</h3>
+                        <address>
+                            SMK NEGERI 7 BATAM<br>
+                            Penyelusuran Sekolah Peringkat, Kelurahan. Kel. Belian Kota. Kota Batam, Prov. Kepulauan Riau Kode Pos: 29463<br>
+                            Email: smknegeri7batam@gmail.com
+                        </address>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.150493630263!2d103.9538357748434!3d1.0601955990264192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d988d4c3829033%3A0xc3f173b9846b9f1d!2sSMK%20Negeri%207%20Batam!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
         </div>
 
-        <div class="footer-navigation">
-            <div class="nav-links">
-                <h3>Navigasi</h3>
-                <ul>
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#">Profil</a></li>
-                    <li><a href="#">Kontak</a></li>
-                </ul>
-            </div>
-            <div class="important-links">
-                <h3>Tautan Penting</h3>
-                <ul>
-                    <li><a href="#">Disdik Kota Batam</a></li>
-                    <li><a href="#">Dapodik SMK Negeri 7 Batam</a></li>
-                    <li><a href="#">Pusat Data dan Statistik Pendidikan</a></li>
-                </ul>
-            </div>
-            <div class="about-us">
-                <h3>Tentang Kami</h3>
-                <address>
-                    Jl. Dwikora, Sei. Ladi, Sekupang, Kota Batam, Riau Islands, Kode Pos: 29463<br>
-                    <strong>Email:</strong> smknegeri7batam@gmail.com
-                </address>
-            </div>
-        </div>
-
-        <div class="map-container">
-            <img src="map-placeholder.png" alt="Lokasi SMK Negeri 7 Batam di Peta" class="map-placeholder">
-            <div class="map-label">SMK Negeri 7 Batam</div>
+        <div class="footer-copyright">
+            <p>©2024 Hak Cipta. SMK NEGERI 7 BATAM</p>
         </div>
 
     </footer>
@@ -228,7 +259,6 @@
             const sidebar = document.getElementById('sidebarMenu');
             const backdrop = document.getElementById('sidebarBackdrop');
             
-            // Hanya aktifkan toggle jika lebar layar < 768px (Mobile)
             if (window.innerWidth < 768) {
                 sidebar.classList.toggle('active');
                 backdrop.classList.toggle('active');
