@@ -1,562 +1,259 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMK Negeri 7 Batam - Website Sekolah</title>
-    <!-- Link eksternal untuk font dan icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<!DOCTYPE html> <html lang="id"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>SMK Negeri 7 Batam - Website Sekolah</title> <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="responsive.css"> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> </head> <body>
+<div class="sidebar" id="sidebarMenu">
+    <div class="sidebar-header">
+        <span class="sidebar-title">SMK NEGERI 7 BATAM</span>
+        <button class="close-btn" onclick="toggleMenu()">×</button>
+    </div>
+    <ul class="sidebar-nav">
+        <li><a href="#welcome" onclick="toggleMenu()">Home</a></li>
+        <li class="has-submenu"><a href="#identitas" onclick="toggleMenu()">Profil <span class="arrow">▼</span></a></li>
+        <li class="has-submenu"><a href="#program" onclick="toggleMenu()">Program <span class="arrow">▼</span></a></li>
+        <li class="has-submenu"><a href="#program" onclick="toggleMenu()">Konsentrasi Keahlian <span class="arrow">▼</span></a></li>
+        <li><a href="#">GTK dan Siswa</a></li> 
+        <li><a href="#">SarPras</a></li>
+        <li class="has-submenu"><a href="#">Kegiatan <span class="arrow">▼</span></a></li>
+        <li class="has-submenu"><a href="#">Galeri <span class="arrow">▼</span></a></li>
+        <li class="has-submenu"><a href="#berita" onclick="toggleMenu()">Berita <span class="arrow">▼</span></a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#footer-kontak" onclick="toggleMenu()">Kontak</a></li>
+        <li><a href="#" class="login-link">Login</a></li>
+    </ul>
+</div>
+<div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleMenu()"></div>
+
+<header class="navbar">
+    <div class="nav-brand">
+        <img src="https://iili.io/KlV0Ala.md.png" alt="Logo SMK Negeri 7 Batam" class="logo-image">
+    </div>
     
-    <!-- CSS Internal: Semua styling di sini (termasuk fix gambar biru) -->
-    <style>
-        /* Reset dasar dan font umum */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        a {
-            text-decoration: none;
-        }
-        ul {
-            list-style: none;
-        }
+    <nav class="desktop-menu">
+        <ul>
+            <li><a href="#welcome">Home</a></li>
+            <li><a href="#identitas">Profil</a></li>
+            <li><a href="#program">Program</a></li>
+            <li><a href="#program">Konsentrasi Keahlian</a></li>
+            <li><a href="#">GTK dan Siswa</a></li>
+            <li><a href="#">SarPras</a></li>
+            <li><a href="#">Kegiatan</a></li>
+            <li><a href="#">Galeri</a></li>
+            <li><a href="#berita">Berita</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#footer-kontak">Kontak</a></li>
+            <li class="login-btn"><a href="#">Login</a></li>
+        </ul>
+    </nav>
+    
+    <button class="menu-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </button>
+</header>
 
-        /* ========================================
-           FIX UNTUK GAMBAR LOGO YANG JADI BIRU
-           ======================================== */
-        .logo-image,
-        .logo-image-footer,
-        .motto-image {
-            filter: none !important; /* Hapus filter biru/invert */
-            -webkit-filter: none !important;
-            mix-blend-mode: normal !important;
-            opacity: 1 !important;
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 100px;
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* Header navbar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #fff;
-            padding: 15px 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .nav-brand .logo-image {
-            height: 60px;
-            padding: 10px 0;
-        }
-        .desktop-menu ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-        }
-        .desktop-menu ul li a {
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        .desktop-menu ul li a:hover {
-            color: #ffd700;
-        }
-        .login-btn a {
-            background-color: #ffd700;
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 5px;
-        }
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        .bar {
-            width: 25px;
-            height: 3px;
-            background-color: #333;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        /* Sidebar (mobile menu) */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: -300px;
-            width: 300px;
-            height: 100vh;
-            background-color: #2c3e50;
-            transition: left 0.3s ease;
-            z-index: 2000;
-            padding: 20px 0;
-        }
-        .sidebar.active {
-            left: 0;
-        }
-        .sidebar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            color: #fff;
-            border-bottom: 1px solid #34495e;
-        }
-        .sidebar-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-        .close-btn {
-            background: none;
-            border: none;
-            color: #fff;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .sidebar-nav li {
-            border-bottom: 1px solid #34495e;
-        }
-        .sidebar-nav li a {
-            display: block;
-            padding: 15px 20px;
-            color: #fff;
-            transition: background-color 0.3s ease;
-        }
-        .sidebar-nav li a:hover {
-            background-color: #34495e;
-        }
-        .arrow {
-            float: right;
-            transition: transform 0.3s ease;
-        }
-        .sidebar-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1500;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease;
-        }
-        .sidebar-backdrop.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        body.no-scroll {
-            overflow: hidden;
-        }
-
-        /* Welcome section */
-        .welcome-section {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-        .background-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        .content-container {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            text-align: center;
-            color: #fff;
-        }
-        .decorative-line-box {
-            display: inline-block;
-            margin-right: 15px;
-            vertical-align: middle;
-        }
-        .decorative-line {
-            width: 4px;
-            height: 50px;
-            background-color: #ffd700;
-        }
-        .vertical-line {
-            display: inline-block;
-        }
-        .yellow-line {
-            background-color: #ffd700;
-        }
-        .orange-line {
-            background-color: #ff8c00;
-        }
-        .greeting {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        .welcome-text h1 {
-            font-size: 3.5rem;
-            margin: 10px 0;
-            font-weight: 800;
-        }
-        .motto {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Stats section */
-        .stats-section {
-            display: flex;
-            justify-content: space-around;
-            padding: 50px 20px;
-            background-color: #f8f9fa;
-            flex-wrap: wrap;
-        }
-        .stat-box {
-            text-align: center;
-            padding: 30px 20px;
-            border-radius: 10px;
-            color: #fff;
-            flex: 1;
-            min-width: 200px;
-            margin: 10px;
-        }
-        .yellow-bg {
-            background-color: #ffd700;
-        }
-        .stat-number {
-            display: block;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .stat-label {
-            font-size: 1rem;
-            text-transform: uppercase;
-        }
-
-        /* Main content section */
-        .main-content-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        .section-title {
-            text-align: center;
-            color: #2c3e50;
-            margin: 40px 0 20px;
-            font-size: 2rem;
-            font-weight: 700;
-        }
-        .mt-4 {
-            margin-top: 1.5rem !important;
-        }
-
-        /* Identity section */
-        .headmaster-title {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #ffd700;
-            margin: 10px 0;
-        }
-        .headmaster-name {
-            text-align: center;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-        .tabs {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .tab {
-            padding: 10px 20px;
-            background-color: #e9ecef;
-            color: #333;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .tab.active,
-        .tab:hover {
-            background-color: #ffd700;
-            color: #fff;
-        }
-        .school-info {
-            background-color: #f8f9fa;
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-        }
-        .school-info p {
-            margin: 10px 0;
-            line-height: 1.5;
-        }
-        .tagline-group {
-            display: flex;
-            justify-content: space-around;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-        .tagline {
-            text-align: center;
-            padding: 25px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            flex: 1;
-            min-width: 250px;
-        }
-        .tagline strong {
-            color: #ffd700;
-            font-size: 1.5rem;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        /* Program and news container */
-        .program-and-news-container {
-            display: flex;
-            gap: 40px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-        .program-box-column,
-        .excellence-and-news-column {
-            flex: 1;
-            min-width: 300px;
-        }
-        .program-box {
-            background-color: #f8f9fa;
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        .program-item {
-            display: flex;
-            align-items: center;
-        }
-        .program-details {
-            flex: 1;
-        }
-        .program-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-        .program-subtitle {
-            color: #666;
-            margin-top: 5px;
-        }
-        .excellence-points ul {
-            padding-left: 20px;
-        }
-        .excellence-points li {
-            margin-bottom: 10px;
-            color: #555;
-        }
-        .news-subtitle {
-            text-align: center;
-            color: #ffd700;
-            font-size: 1.2rem;
-            margin: 20px 0;
-        }
-        .news-preview {
-            background-color: #e9ecef;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        /* Join us banner */
-        .join-us-banner {
-            text-align: center;
-            padding: 60px 20px;
-            background-color: #ffd700;
-            color: #1a1a1a;
-            margin: 40px 0;
-            border-radius: 10px;
-        }
-        .join-text {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        .motto-box {
-            display: inline-block;
-            margin-top: 20px;
-        }
-        .motto-image {
-            max-width: 300px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Footer */
-        .main-footer {
-            background-color: #1a1a1a;
-            color: #fff;
-            padding: 40px 0 20px;
-        }
-        .footer-top-bg {
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-        }
-        .footer-content-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .footer-top {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-        }
-        .footer-section h3 {
-            color: #ffd700;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        .footer-section ul li {
-            margin-bottom: 8px;
-        }
-        .footer-section ul li a {
-            color: #ccc;
-            transition: color 0.3s ease;
-        }
-        .footer-section ul li a:hover {
-            color: #ffd700;
-        }
-        .logo-box .logo-image-footer {
-            height: 80px;
-            margin-bottom: 10px;
-        }
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .social-icons a {
-            width: 40px;
-            height: 40px;
-            background-color: #ffd700;
-            color: #1a1a1a;
-            text-align: center;
-            line-height: 40px;
-            border-radius: 50%;
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-        .social-icons a:hover {
-            transform: scale(1.1);
-            background-color: #fff;
-            color: #ffd700;
-        }
-        .about-us address {
-            color: #ccc;
-            line-height: 1.6;
-            font-style: normal;
-        }
-        .map-container {
-            width: 100%;
-            height: 300px;
-            margin-top: 30px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .map-container iframe {
-            border: 0;
-        }
-        .footer-copyright {
-            background-color: #000;
-            text-align: center;
-            padding: 15px 0;
-            color: #ccc;
-            font-size: 14px;
-            border-top: 1px solid #333;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .desktop-menu {
-                display: none;
-            }
-            .menu-toggle {
-                display: flex;
-            }
-            .welcome-text h1 {
-                font-size: 2.5rem;
-            }
-            .stats-section {
-                flex-direction: column;
-                align-items: center;
-            }
-            .program-and-news-container {
-                flex-direction: column;
-            }
-            .tagline-group {
-                flex-direction: column;
-                align-items: center;
-            }
-            .footer-top {
-                flex-direction: column;
-                gap: 20px;
-            }
-            .map-container {
-                height: 250px;
-            }
-            .logo-image,
-            .logo-image-footer {
-                max-height: 50px;
-            }
-            .join-text {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="sidebar" id="sidebarMenu">
-        <div class="sidebar-header">
-            <span class="sidebar-title">SMK NEGERI 7 BATAM</span>
-            <button class="close-btn" onclick="toggleMenu()">×</button>
+<main class="welcome-section" id="welcome">
+    <div class="background-img" style="background-image: url('bg-smk7.jpg');"></div>
+    <div class="overlay"></div>
+    <div class="content-container">
+        <div class="decorative-line-box">
+            <div class="decorative-line vertical-line"></div>
         </div>
-        <ul class="sidebar-nav">
-            <li><a href="#welcome" onclick="toggleMenu()">Home</
+        <div class="welcome-text">
+            <p class="greeting">SELAMAT DATANG di</p>
+            <h1>SMK NEGERI 7 BATAM</h1>
+            <p class="motto">SMK Negeri 7 Batam Mewujudkan Peserta Didik yang Beriman, Bertaqwa kepada Tuhan Yang Maha Esa, Berakhlak Mulia, Terampil, Unggul, dan Berdaya Saing Global di Era Teknologi Digital.</p>
+        </div>
+    </div>
+</main>
+
+<section class="stats-section">
+    <div class="stat-box yellow-bg">
+        <span class="stat-number">0</span>
+        <p class="stat-label">GURU DAN TENAGA KEPENDIDIKAN</p>
+    </div>
+    <div class="stat-box yellow-bg">
+        <span class="stat-number">0</span>
+        <p class="stat-label">ROMBEL</p>
+    </div>
+    <div class="stat-box yellow-bg">
+        <span class="stat-number">0</span>
+        <p class="stat-label">KONSENTRASI KEAHLIAN</p>
+    </div>
+    <div class="stat-box yellow-bg">
+        <span class="stat-number">0</span>
+        <p class="stat-label">PESERTA DIDIK</p>
+    </div>
+</section>
+
+<section class="main-content-section">
+    
+    <div class="identity-section" id="identitas">
+        <h2 class="section-title">KATA SAMBUTAN</h2>
+        <p class="headmaster-title">KEPALA SMK NEGERI 7 BATAM</p>
+        <p class="headmaster-name">Kepala SMK Negeri 7 Batam</p>
+        
+        <h2 class="section-title">IDENTITAS SEKOLAH</h2>
+        <div class="tabs">
+            <a href="#" class="tab active">Identitas Sekolah</a>
+            <a href="#" class="tab">Kontak</a>
+            <a href="#" class="tab">Ketersediaan</a>
+        </div>
+        
+        <div class="school-info">
+            <p><strong>Akreditasi :</strong> A</p>
+            <p><strong>Kurikulum :</strong> Kurikulum Merdeka</p>
+            <p><strong>NPSN :</strong> 69774885</p>
+            <p><strong>Status :</strong> Negeri</p>
+            <p><strong>Bentuk Pendidikan :</strong> SMK</p>
+            <p><strong>Status Kepemilikan :</strong> Pemerintah Daerah</p>
+            <p><strong>SK Pendirian Sekolah :</strong> KPTS.367/HK/IX/2014</p>
+            <p><strong>Tanggal SK Pendirian :</strong> 2014-09-05</p>
+            <p><strong>SK Izin Operasional :</strong> KPTS.367/HK/IX/2014</p>
+            <p><strong>Tanggal SK Izin Operasional :</strong> 2015-10-23</p>
+        </div>
+        
+        <div class="tagline-group">
+            <div class="tagline inovatif">
+                <p><strong>INOVATIF</strong></p>
+                <p>Pioneering Solutions and Innovations</p>
+            </div>
+            <div class="tagline berbudaya">
+                <p><strong>BERBUDAYA</strong></p>
+                <p>Diverse Ethnicities and Religions</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="program-and-news-container">
+        <div class="program-box-column" id="program">
+            <h2 class="section-title">KONSENTRASI KEAHLIAN</h2>
+            <div class="program-box">
+                <div class="program-item">
+                    <div class="decorative-line-box">
+                        <div class="decorative-line vertical-line yellow-line"></div>
+                    </div>
+                    <div class="program-details">
+                        <p class="program-title">Konsentrasi Unggulan</p>
+                        <p class="program-subtitle">SMK Negeri 7 Batam</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title mt-4">Rencana Aksi Program SMK Pusat Keunggulan</h2>
+            <div class="program-box">
+                <div class="program-item">
+                    <div class="decorative-line-box">
+                        <div class="decorative-line vertical-line orange-line"></div>
+                    </div>
+                    <div class="program-details">
+                        <p class="program-title">SMK Negeri 7 Batam, SMK Pusat Keunggulan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="excellence-and-news-column" id="berita">
+            <h2 class="section-title">SMK Negeri 7 Batam, SMK Pusat Keunggulan</h2>
+            <div class="excellence-points">
+                <ul>
+                    <li>Mengembangkan kerjasama dengan DUDIKA</li>
+                    <li>Memiliki kelas industri untuk semua konsentrasi keahlian</li>
+                    <li>Memiliki Lembaga Sertifikasi Profesi</li>
+                </ul>
+            </div>
+            
+            <h2 class="section-title news-title">SMK NEGERI 7 BATAM</h2>
+            <p class="news-subtitle">Berita Terbaru</p>
+            <div class="news-preview">
+                <p style="padding-top: 20px;">[Daftar Berita Terbaru di sini...]</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="join-us-banner">
+        <h2 class="join-text">Ayo Bergabung di SMK Negeri 7 Batam</h2>
+        <div class="motto-box">
+             <img src="https://iili.io/KlV0CNV.png" alt="SMK BISA SMK HEBAT" class="motto-image">
+        </div>
+    </div>
+
+</section>
+
+<footer class="main-footer" id="footer-kontak">
+    <div class="footer-top-bg">
+        <div class="footer-content-wrapper">
+            <div class="footer-top">
+                
+                <div class="footer-section footer-logo-socmed">
+                    <div class="logo-box">
+                        <img src="https://iili.io/KlV0Ala.md.png" alt="Logo SMK Negeri 7 Batam" class="logo-image-footer">
+                    </div>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section footer-links-group">
+                    <div class="nav-links">
+                        <h3>Navigasi</h3>
+                        <ul>
+                            <li><a href="#welcome">Home</a></li>
+                            <li><a href="#footer-kontak">Kontak</a></li>
+                        </ul>
+                    </div>
+                    <div class="important-links">
+                        <h3>Tautan Penting</h3>
+                        <ul>
+                            <li><a href="#">Disdik Kota Batam</a></li>
+                            <li><a href="#">Dapodik Provinsi Kepri</a></li>
+                            <li><a href="#">Data Sekolah SMK Negeri 7 Batam</a></li>
+                            <li><a href="#">Peta Lokasi SMK Negeri 7 Batam</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-section about-us">
+                    <h3>Tentang Kami</h3>
+                    <address>
+                        SMK NEGERI 7 BATAM<br>
+                        Penyelusuran Sekolah Peringkat, Kelurahan. Kel. Belian Kota. Kota Batam, Prov. Kepulauan Riau Kode Pos: 29463<br>
+                        Email: smknegeri7batam@gmail.com
+                    </address>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.150493630263!2d103.9538357748434!3d1.0601955990264192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d988d4c3829033%3A0xc3f173b9846b9f1d!2sSMK%20Negeri%207%20Batam!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-copyright">
+        <p>©2024 Hak Cipta. SMK NEGERI 7 BATAM</p>
+    </div>
+
+</footer>
+
+<script>
+    function toggleMenu() {
+        const sidebar = document.getElementById('sidebarMenu');
+        const backdrop = document.getElementById('sidebarBackdrop');
+        
+        if (window.innerWidth < 768) {
+            sidebar.classList.toggle('active');
+            backdrop.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        }
+    }
+
+    document.querySelector('.menu-toggle').onclick = toggleMenu;
+</script>
+</body> </html>
