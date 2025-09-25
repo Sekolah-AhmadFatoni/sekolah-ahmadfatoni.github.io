@@ -1,21 +1,27 @@
-/* responsive.css (Penyesuaian untuk PC/Desktop) */
+/* responsive.css (Penyesuaian untuk PC/Desktop >= 768px) */
 
 @media (min-width: 768px) {
     
     /* --- Navbar Adjustments (PC) --- */
-    .website-link {
-        display: block; 
-        margin-right: auto;
-        margin-left: 20px;
+    .navbar {
+        padding: 10px 40px;
+        background-color: #fff; 
+        border-bottom: 5px solid #ffc107;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .menu-toggle {
-        display: block; /* Tetap ditampilkan di PC */
-        margin-left: 20px; 
+    .nav-brand {
+        order: -1; 
+        margin-right: 20px;
     }
-    
+
+    .logo-image {
+        height: 60px; 
+    }
+
     .desktop-menu {
         display: block; 
+        margin-left: auto; 
     }
     
     .desktop-menu ul {
@@ -24,29 +30,37 @@
         padding: 0;
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 15px;
     }
     
     .desktop-menu li a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 600;
-        font-size: 1em;
+        color: #333; 
+        font-weight: 500;
+        font-size: 0.9em;
         padding: 5px 0;
         transition: color 0.2s;
+        display: block;
     }
     
     .desktop-menu li a:hover {
         color: #ffc107;
     }
+
+    .desktop-menu .login-btn a {
+        background-color: #ffc107;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-weight: 700;
+        color: #333;
+        margin-left: 10px;
+    }
     
-    /* Sembunyikan Sidebar di PC */
+    .menu-toggle .bar {
+        background-color: #333; 
+    }
+    
     .sidebar, .sidebar-backdrop {
         display: none !important;
-    }
-
-    .no-scroll {
-        overflow: auto;
     }
 
     /* --- Welcome Section Adjustments (PC) --- */
@@ -66,6 +80,10 @@
     }
 
     /* --- Main Content Adjustments (PC) --- */
+    .main-content-section {
+        padding: 40px 50px; 
+    }
+    
     .section-title {
         text-align: left; 
     }
@@ -73,31 +91,12 @@
     .identity-section {
         text-align: left;
     }
-    
-    .headmaster-name, .headmaster-title {
-        text-align: center;
-    }
-    
-    .tabs {
-        justify-content: flex-start;
-    }
-    
-    .school-info {
-        margin: 0 0 40px 0;
-        max-width: none;
-    }
 
     .tagline-group {
         flex-direction: row; 
-        justify-content: center;
+        justify-content: flex-start;
         gap: 60px;
-        max-width: 800px;
-        margin: 0 auto 40px auto;
-        display: flex; 
-    }
-    
-    .tagline {
-        text-align: left;
+        margin: 0 0 40px 0;
     }
     
     /* Program & Excellence: Two Column Layout on PC */
@@ -107,38 +106,38 @@
         gap: 40px;
         align-items: flex-start;
     }
-    
-    .excellence-and-news-column {
-        grid-column: 2; 
-    }
-    
-    .program-box-column {
-        grid-column: 1; 
-    }
-
-    .news-title, .news-subtitle {
-        text-align: left;
-    }
 
     /* --- Footer Adjustments (PC) --- */
+    .footer-content-wrapper {
+        padding: 0 50px; 
+    }
+
     .footer-top {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr 1.2fr; /* Disesuaikan: Logo, Link, About */
+        gap: 30px;
+        text-align: left;
+        align-items: flex-start;
+        padding-bottom: 40px;
+    }
+
+    .footer-logo-socmed {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .footer-links-group {
+        /* Menggabungkan nav-links dan important-links dalam satu kolom */
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-        max-width: 1000px;
-        margin: 0 auto 30px auto;
-        border-bottom: 1px solid #444;
-        padding-bottom: 20px;
+        flex-direction: column;
+        gap: 30px; 
     }
     
-    .footer-navigation {
-        flex-direction: row; 
-        justify-content: space-around;
+    .footer-section {
         text-align: left;
-        padding: 0 40px;
     }
     
     .map-container {
-        height: 400px;
+        height: 400px; 
     }
 }
