@@ -28,6 +28,17 @@ a {
     color: #333 !important;
 }
 
+/* Utility class baru untuk anti-crop sisi kiri/kanan (gunakan di HTML: class="no-side-crop") */
+.no-side-crop {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; /* ANTI-CROP UPDATE: Tampilkan utuh, tidak crop sisi */
+    object-position: center center; /* ANTI-CROP UPDATE: Center simetris */
+    display: block;
+    margin: 0 auto;
+}
+
 .section-title {
     font-size: 1.5em;
     font-weight: 700;
@@ -53,6 +64,9 @@ a {
 .logo-image {
     height: 40px;
     vertical-align: middle;
+    object-fit: contain; /* ANTI-CROP UPDATE: Pastikan logo tidak crop sisi */
+    object-position: center;
+    max-width: 100%; /* ANTI-CROP UPDATE: Adaptif ke lebar navbar */
 }
 
 .desktop-menu {
@@ -97,9 +111,13 @@ a {
 /* --- Welcome Section --- */
 .welcome-section {
     position: relative; width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center;
+    overflow: visible; /* ANTI-CROP UPDATE: Izinkan overflow agar sisi tidak hidden */
 }
 .background-img {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+    background-size: contain; /* ANTI-CROP UPDATE: Ubah dari cover ke contain (utuh, tidak crop sisi) */
+    background-position: center center; /* ANTI-CROP UPDATE: Center simetris untuk kiri/kanan */
+    background-repeat: no-repeat; /* ANTI-CROP UPDATE: Tidak ulang gambar */
 }
 .overlay {
     position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.75); z-index: 1;
@@ -130,6 +148,7 @@ a {
     padding: 40px 20px; 
     max-width: 1200px;
     margin: 0 auto;
+    overflow: visible; /* ANTI-CROP UPDATE: Pastikan konten tidak hidden crop */
 }
 
 .identity-section { text-align: center; margin-bottom: 50px; }
@@ -157,12 +176,15 @@ a {
     margin-top: 50px;
     margin-bottom: 50px;
     background-color: #f7f7f7;
+    overflow: visible; /* ANTI-CROP UPDATE: Izinkan sisi terlihat */
 }
 .motto-image {
     max-width: 250px; 
     height: auto; 
     display: block;
     margin: 10px auto 0 auto;
+    object-fit: contain; /* ANTI-CROP UPDATE: Utuh tanpa crop sisi */
+    object-position: center center; /* ANTI-CROP UPDATE: Center kiri/kanan */
 }
 
 /* --- Footer Section (Mobile) --- */
@@ -172,11 +194,15 @@ a {
 
 .footer-top-bg {
     background-image: url('bg-smk7.jpg'); 
-    background-size: cover;
-    background-position: center;
+    background-size: contain; /* ANTI-CROP UPDATE: Ubah dari cover ke contain (utuh, tidak crop sisi) */
+    background-position: center center; /* ANTI-CROP UPDATE: Center simetris */
+    background-repeat: no-repeat; /* ANTI-CROP UPDATE: Tidak ulang */
     position: relative;
     padding: 40px 0;
     color: #fff;
+    overflow: visible; /* ANTI-CROP UPDATE: Izinkan overflow sisi */
+    width: 100vw; /* ANTI-CROP UPDATE: Lebar penuh viewport untuk hindari crop container */
+    margin-left: calc(-50vw + 50%); /* ANTI-CROP UPDATE: Extend ke tepi layar jika perlu */
 }
 
 .footer-top-bg::before {
@@ -221,6 +247,9 @@ a {
     height: 80px;
     filter: invert(100%);
     margin-bottom: 15px;
+    object-fit: contain; /* ANTI-CROP UPDATE: Pastikan logo footer tidak crop sisi */
+    object-position: center;
+    max-width: 100%; /* ANTI-CROP UPDATE: Adaptif */
 }
 
 .social-icons a {
@@ -244,6 +273,7 @@ a {
     height: 300px; 
     margin-top: 40px;
     position: relative;
+    overflow: visible; /* ANTI-CROP UPDATE: Hindari crop di map iframe */
 }
 
 .map-container iframe {
@@ -261,3 +291,28 @@ a {
     padding: 10px 0;
     font-size: 0.9em;
 }
+
+/* --- Responsive Anti-Crop (Tambahan untuk Desktop/Mobile) --- */
+@media (min-width: 1024px) {
+    /* Di desktop lebar, pastikan background tidak crop sisi */
+    .background-img, .footer-top-bg {
+        background-size: 100% auto; /* ANTI-CROP UPDATE: Lebar 100%, tinggi auto (proporsional) */
+    }
+    
+    .logo-image, .logo-image-footer, .motto-image {
+        max-width: none; /* ANTI-CROP UPDATE: Izinkan lebar penuh di desktop */
+        width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Di mobile, fokus pada contain untuk hindari crop */
+    .background-img, .footer-top-bg {
+        background-size: contain;
+    }
+    
+    .motto-image {
+        max-width: 200px; /* Lebih kecil di mobile */
+    }
+}
+
